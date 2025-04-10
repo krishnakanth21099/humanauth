@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Humanauth CAPTCHA</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@3/dist/fp.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="captcha-container">
+            <div class="captcha-header">
+                <h2 class="captcha-title">Humanauth Verification</h2>
+                <div class="captcha-logo">
+                    <svg width="120" height="30" viewBox="0 0 120 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 5 L20 5 L20 25 L10 25 Z" fill="#4a6baf"/>
+                        <path d="M5 10 L25 10 L25 20 L5 20 Z" fill="#4a6baf"/>
+                        <text x="35" y="20" font-family="Arial" font-size="14" font-weight="bold" fill="#4a6baf">Humanauth</text>
+                    </svg>
+                </div>
+            </div>
+            
+            <div id="captcha-content" class="captcha-content">
+                <div id="loading" class="loading">
+                    <div class="spinner"></div>
+                    <p>Loading challenge...</p>
+                </div>
+            </div>
+            
+            <div id="result-container" class="result-container" style="display: none;">
+                <div id="trust-score" class="trust-score"></div>
+                <div class="score-meter">
+                    <div id="score-value" class="score-value"></div>
+                </div>
+                <button id="retry-button" class="refresh-button">Try Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/tracker.js"></script>
+    <script src="/static/puzzle.js"></script>
+    <script>
+        // Main CAPTCHA application
+        class HumanauthCaptcha {
+            constructor() {
+                this.sessionId = null;
+                this.apiBaseUrl = '/api';
+                this.contentElement = document.getElementById('captcha-content');
+                this.loadingElement = document.getElementById('loading');
+                this.resultContainer = document.getElementById('result-container');
+                this.trustScoreElement = document.getElementById('trust-score');
+                this.scoreValueElement = document.getElementById('score-value');
+                this.retryButton = document.getElementById('retry-button');
+                
+                // Initialize puzzle renderer
+                this.puzzleRenderer = new PuzzleRenderer(this.contentElement);
+                
+                // Set up event listeners
+                document.addEventListener('challenge-submitted', this.handleChallengeSubmit.bind(this));
+                document.addEventListener('refresh-challenge', this.loadChallenge.bind(this));
+                this.retryButton.addEventListener('click', this.resetCaptcha.bind(this));
+            }
+            
+            /**
+             * Initialize the CAPTCHA
+             */
+            async init() {
+                try {
+                    // Show loading
+                    this.showLoading();
+                    
+                    // Get browser fingerprint
+                    const fingerprint = await this.getFingerprint();
+                    
+                    // Initialize session
+                    await this.initSession(fingerprint);
+                    
+                    // Load challenge
+                    await this.loadChallenge();
+                } catch (error) {
+                    console.error('Error initializing CAPTCHA:', error);
+                    this.showError('Failed to initialize CAPTCHA. Please try again later.');
+                }
+            }
+            
+            /**
+             * Get browser fingerprint using FingerprintJS
+             */
+            async getFingerprint() {
+                try {
+                    const fp = await FingerprintJS.load();
+                    const result = await fp.get();
+                    
+                    // Get browser and OS info
+                    const userAgent = navigator.userAgent;
+                    const browserInfo = this.getBrowserInfo(userAgent);
+                    
+                    // Check if browser might be headless
+                    const headless = this.detectHeadlessBrowser();
+                    
+                    return {
+                        fingerprint_id: result.visitorId,
+                        browser: browserInfo.browser,
+                        os: browserInfo.os,
+                        headless: headless,
+                        entropy_score: Math.random() * 0.5 + 0.5 // Placeholder entropy score
+                    };
+                } catch (error) {
+                    console.error('Error getting fingerprint:', error);
+                    throw error;
+                }
+            }
+            
+            /**
+             * Initialize session with the server
+             */
+            async initSession(fingerprint) {
+                try {
+                    const response = await fetch(`${this.apiBaseUrl}/init-session/`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            fingerprint_id: fingerprint.fingerprint_id,
+                            fingerprint: {
+                                browser: fingerprint.browser,
+                                os: fingerprint.os,
+                                headless: fingerprint.headless,
+                                entropy_score: fingerprint.entropy_score
+                            }
+                        })
+                    });
+                    
+                    if (!response.ok) {
+                        throw new Error(`Failed to initialize session: ${response.status}`);
+                    }
+                    
+                    const data = await response.json();
+                    this.sessionId = data.session_id;
+                    console.log('Session initialized:', this.sessionId);
+                } catch (error) {
+                    console.error('Error initializing session:', error);
+                    throw error;
+                }
+            }
+            
+            /**
+             * Load a challenge from the server
+             */
+            async loadChallenge() {
+                if (!this.sessionId) {
+                    console.error('No session ID available');
+                    return;
+                }
+                
+                try {
+                    this.showLoading();
+                    
+                    const response = await fetch(`${this.apiBaseUrl}/get-challenge/?session_id=${this.sessionId}`);
+                    
+                    if (!response.ok) {
+                        throw new Error(`Failed to load challenge: ${response.status}`);
+                    }
+                    
+                    const data = await response.json();
+                    console.log('Challenge loaded:', data.challenge.type);
+                    
+                    // Hide loading and result
+                    this.hideLoading();
+                    this.hideResult();
+                    
+                    // Render challenge
+                    this.puzzleRenderer.loadChallenge(data.challenge);
+                } catch (error) {
+                    console.error('Error loading challenge:', error);
+                    this.showError('Failed to load challenge. Please try again.');
+                }
+            }
+            
+            /**
+             * Handle challenge submission
+             */
+            async handleChallengeSubmit(event) {
+                const response = event.detail;
+                
+                try {
+                    this.showLoading();
+                    
+                    // Add session ID to response
+                    response.session_id = this.sessionId;
+                    
+                    // Submit to server
+                    const apiResponse = await fetch(`${this.apiBaseUrl}/submit-challenge/`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(response)
+                    });
+                    
+                    if (!apiResponse.ok) {
+                        throw new Error(`Failed to submit challenge: ${apiResponse.status}`);
+                    }
+                    
+                    const data = await apiResponse.json();
+                    console.log('Challenge submitted:', data);
+                    
+                    // Show result
+                    this.hideLoading();
+                    this.showResult(data.trust_score, data.passed);
+                } catch (error) {
+                    console.error('Error submitting challenge:', error);
+                    this.hideLoading();
+                    this.showError('Failed to submit challenge. Please try again.');
+                }
+            }
+            
+            /**
+             * Reset the CAPTCHA
+             */
+            resetCaptcha() {
+                this.hideResult();
+                this.loadChallenge();
+            }
+            
+            /**
+             * Show loading indicator
+             */
+            showLoading() {
+                this.loadingElement.style.display = 'block';
+                this.contentElement.innerHTML = '';
+                this.contentElement.appendChild(this.loadingElement);
+            }
+            
+            /**
+             * Hide loading indicator
+             */
+            hideLoading() {
+                this.loadingElement.style.display = 'none';
+            }
+            
+            /**
+             * Show error message
+             */
+            showError(message) {
+                this.contentElement.innerHTML = `
+                    <div class="error-message">
+                        <p>${message}</p>
+                        <button id="error-retry" class="refresh-button">Try Again</button>
+                    </div>
+                `;
+                
+                document.getElementById('error-retry').addEventListener('click', () => {
+                    this.init();
+                });
+            }
+            
+            /**
+             * Show result
+             */
+            showResult(trustScore, passed) {
+                // Format trust score
+                const scorePercent = Math.round(trustScore * 100);
+                
+                // Set score text
+                this.trustScoreElement.textContent = `Trust Score: ${scorePercent}%`;
+                
+                // Set score meter
+                this.scoreValueElement.style.width = `${scorePercent}%`;
+                
+                // Set result class based on passed status
+                this.resultContainer.className = 'result-container ' + 
+                    (passed ? 'result-success' : 'result-failure');
+                
+                // Show result container
+                this.resultContainer.style.display = 'block';
+            }
+            
+            /**
+             * Hide result
+             */
+            hideResult() {
+                this.resultContainer.style.display = 'none';
+            }
+            
+            /**
+             * Get browser and OS info from user agent
+             */
+            getBrowserInfo(userAgent) {
+                let browser = 'Unknown';
+                let os = 'Unknown';
+                
+                // Detect browser
+                if (userAgent.indexOf('Firefox') > -1) {
+                    browser = 'Firefox';
+                } else if (userAgent.indexOf('SamsungBrowser') > -1) {
+                    browser = 'Samsung Browser';
+                } else if (userAgent.indexOf('Opera') > -1 || userAgent.indexOf('OPR') > -1) {
+                    browser = 'Opera';
+                } else if (userAgent.indexOf('Edge') > -1) {
+                    browser = 'Edge';
+                } else if (userAgent.indexOf('Chrome') > -1) {
+                    browser = 'Chrome';
+                } else if (userAgent.indexOf('Safari') > -1) {
+                    browser = 'Safari';
+                }
+                
+                // Detect OS
+                if (userAgent.indexOf('Windows') > -1) {
+                    os = 'Windows';
+                } else if (userAgent.indexOf('Mac') > -1) {
+                    os = 'MacOS';
+                } else if (userAgent.indexOf('Linux') > -1) {
+                    os = 'Linux';
+                } else if (userAgent.indexOf('Android') > -1) {
+                    os = 'Android';
+                } else if (userAgent.indexOf('iOS') > -1 || userAgent.indexOf('iPhone') > -1 || userAgent.indexOf('iPad') > -1) {
+                    os = 'iOS';
+                }
+                
+                return { browser, os };
+            }
+            
+            /**
+             * Detect if browser might be headless
+             */
+            detectHeadlessBrowser() {
+                // Check for common headless browser indicators
+                const navigatorHasWebdriver = 'webdriver' in navigator && navigator.webdriver;
+                const hasChrome = window.chrome !== undefined;
+                const hasPermissions = 'permissions' in navigator;
+                
+                // Check for unusual screen dimensions
+                const hasNormalDimensions = window.outerWidth !== 0 && window.outerHeight !== 0;
+                
+                // Check for plugins (headless browsers typically have none)
+                const hasPlugins = navigator.plugins.length > 0;
+                
+                // Combine checks (this is a simplified version)
+                return navigatorHasWebdriver || 
+                       (!hasChrome && !hasPermissions) || 
+                       !hasNormalDimensions || 
+                       !hasPlugins;
+            }
+        }
+        
+        // Initialize CAPTCHA when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            const captcha = new HumanauthCaptcha();
+            captcha.init();
+            
+            // Expose captcha instance for debugging
+            window.captcha = captcha;
+        });
+    </script>
+</body>
+</html>

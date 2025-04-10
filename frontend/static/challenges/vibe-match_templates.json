@@ -1,0 +1,57 @@
+[
+  {
+    "type": "vibe-match",
+    "entropy": "3ddb4e34",
+    "text": "I can't believe they would do this after everything we've been through!",
+    "options": [
+      "angry",
+      "happy",
+      "sad"
+    ],
+    "instruction": "What is the emotional tone of this text?"
+  },
+  {
+    "type": "vibe-match",
+    "entropy": "1ada6be7",
+    "text": "I miss how things used to be. Nothing feels the same anymore.",
+    "options": [
+      "angry",
+      "calm",
+      "sad"
+    ],
+    "instruction": "What is the emotional tone of this text?"
+  },
+  {
+    "type": "vibe-match",
+    "entropy": "3ce666d9",
+    "text": "You're kidding me! That's absolutely incredible!",
+    "options": [
+      "calm",
+      "surprised",
+      "angry"
+    ],
+    "instruction": "What is the emotional tone of this text?"
+  },
+  {
+    "type": "vibe-match",
+    "entropy": "e0f739a8",
+    "text": "I'm at peace with whatever happens. It will all work out.",
+    "options": [
+      "calm",
+      "angry",
+      "happy"
+    ],
+    "instruction": "What is the emotional tone of this text?"
+  },
+  {
+    "type": "vibe-match",
+    "entropy": "215d5444",
+    "text": "I'm at peace with whatever happens. It will all work out.",
+    "options": [
+      "calm",
+      "happy",
+      "surprised"
+    ],
+    "instruction": "What is the emotional tone of this text?"
+  }
+]

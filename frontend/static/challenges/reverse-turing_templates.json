@@ -1,0 +1,77 @@
+[
+  {
+    "type": "reverse-turing",
+    "entropy": "08e2bfe7",
+    "texts": [
+      {
+        "id": "text-1",
+        "content": "My dog barked at the mailman again today, I really need to train him better."
+      },
+      {
+        "id": "text-2",
+        "content": "My canine companion vocalized at the postal service representative again during the current diurnal cycle, necessitating improved behavioral conditioning protocols."
+      }
+    ],
+    "instruction": "Select the text that was written by a human:"
+  },
+  {
+    "type": "reverse-turing",
+    "entropy": "7a3e5344",
+    "texts": [
+      {
+        "id": "text-1",
+        "content": "The sunset painted the sky with streaks of orange and pink, reflecting off the calm water."
+      },
+      {
+        "id": "text-2",
+        "content": "The solar descent created a chromatic display of orange and pink hues across the celestial canvas, which was subsequently mirrored by the quiescent aquatic surface."
+      }
+    ],
+    "instruction": "Select the text that was written by a human:"
+  },
+  {
+    "type": "reverse-turing",
+    "entropy": "7880c1cb",
+    "texts": [
+      {
+        "id": "text-1",
+        "content": "I felt a mix of excitement and nervousness as I walked into the interview room, my hands slightly shaking."
+      },
+      {
+        "id": "text-2",
+        "content": "Upon entering the interview environment, I experienced a combination of anticipatory excitement and anxiety, with minor tremors in my upper extremities."
+      }
+    ],
+    "instruction": "Select the text that was written by a human:"
+  },
+  {
+    "type": "reverse-turing",
+    "entropy": "13e99125",
+    "texts": [
+      {
+        "id": "text-1",
+        "content": "The sunset painted the sky with streaks of orange and pink, reflecting off the calm water."
+      },
+      {
+        "id": "text-2",
+        "content": "The solar descent created a chromatic display of orange and pink hues across the celestial canvas, which was subsequently mirrored by the quiescent aquatic surface."
+      }
+    ],
+    "instruction": "Select the text that was written by a human:"
+  },
+  {
+    "type": "reverse-turing",
+    "entropy": "e0e05e00",
+    "texts": [
+      {
+        "id": "text-1",
+        "content": "I felt a mix of excitement and nervousness as I walked into the interview room, my hands slightly shaking."
+      },
+      {
+        "id": "text-2",
+        "content": "Upon entering the interview environment, I experienced a combination of anticipatory excitement and anxiety, with minor tremors in my upper extremities."
+      }
+    ],
+    "instruction": "Select the text that was written by a human:"
+  }
+]

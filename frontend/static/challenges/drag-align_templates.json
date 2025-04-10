@@ -1,0 +1,252 @@
+[
+  {
+    "type": "drag-align",
+    "entropy": "da2760bf",
+    "shapes": [
+      {
+        "id": "shape-0",
+        "type": "square",
+        "x": 142,
+        "y": 181,
+        "size": 41
+      },
+      {
+        "id": "shape-1",
+        "type": "star",
+        "x": 140,
+        "y": 228,
+        "size": 48
+      },
+      {
+        "id": "shape-2",
+        "type": "circle",
+        "x": 260,
+        "y": 65,
+        "size": 45
+      }
+    ],
+    "targets": [
+      {
+        "id": "target-0",
+        "type": "square",
+        "x": 181,
+        "y": 115,
+        "size": 46
+      },
+      {
+        "id": "target-1",
+        "type": "star",
+        "x": 239,
+        "y": 214,
+        "size": 53
+      },
+      {
+        "id": "target-2",
+        "type": "circle",
+        "x": 192,
+        "y": 51,
+        "size": 50
+      }
+    ]
+  },
+  {
+    "type": "drag-align",
+    "entropy": "fab13243",
+    "shapes": [
+      {
+        "id": "shape-0",
+        "type": "hexagon",
+        "x": 120,
+        "y": 125,
+        "size": 46
+      },
+      {
+        "id": "shape-1",
+        "type": "circle",
+        "x": 316,
+        "y": 51,
+        "size": 31
+      },
+      {
+        "id": "shape-2",
+        "type": "star",
+        "x": 284,
+        "y": 53,
+        "size": 30
+      }
+    ],
+    "targets": [
+      {
+        "id": "target-0",
+        "type": "hexagon",
+        "x": 257,
+        "y": 130,
+        "size": 51
+      },
+      {
+        "id": "target-1",
+        "type": "circle",
+        "x": 232,
+        "y": 68,
+        "size": 36
+      },
+      {
+        "id": "target-2",
+        "type": "star",
+        "x": 115,
+        "y": 172,
+        "size": 35
+      }
+    ]
+  },
+  {
+    "type": "drag-align",
+    "entropy": "b2da2e4f",
+    "shapes": [
+      {
+        "id": "shape-0",
+        "type": "square",
+        "x": 59,
+        "y": 130,
+        "size": 44
+      },
+      {
+        "id": "shape-1",
+        "type": "star",
+        "x": 271,
+        "y": 167,
+        "size": 46
+      },
+      {
+        "id": "shape-2",
+        "type": "triangle",
+        "x": 217,
+        "y": 193,
+        "size": 42
+      }
+    ],
+    "targets": [
+      {
+        "id": "target-0",
+        "type": "square",
+        "x": 268,
+        "y": 249,
+        "size": 49
+      },
+      {
+        "id": "target-1",
+        "type": "star",
+        "x": 341,
+        "y": 139,
+        "size": 51
+      },
+      {
+        "id": "target-2",
+        "type": "triangle",
+        "x": 143,
+        "y": 194,
+        "size": 47
+      }
+    ]
+  },
+  {
+    "type": "drag-align",
+    "entropy": "e54eb103",
+    "shapes": [
+      {
+        "id": "shape-0",
+        "type": "hexagon",
+        "x": 65,
+        "y": 60,
+        "size": 32
+      },
+      {
+        "id": "shape-1",
+        "type": "triangle",
+        "x": 53,
+        "y": 150,
+        "size": 38
+      },
+      {
+        "id": "shape-2",
+        "type": "square",
+        "x": 194,
+        "y": 110,
+        "size": 37
+      }
+    ],
+    "targets": [
+      {
+        "id": "target-0",
+        "type": "hexagon",
+        "x": 243,
+        "y": 173,
+        "size": 37
+      },
+      {
+        "id": "target-1",
+        "type": "triangle",
+        "x": 77,
+        "y": 186,
+        "size": 43
+      },
+      {
+        "id": "target-2",
+        "type": "square",
+        "x": 150,
+        "y": 137,
+        "size": 42
+      }
+    ]
+  },
+  {
+    "type": "drag-align",
+    "entropy": "643347c2",
+    "shapes": [
+      {
+        "id": "shape-0",
+        "type": "triangle",
+        "x": 223,
+        "y": 128,
+        "size": 38
+      },
+      {
+        "id": "shape-1",
+        "type": "star",
+        "x": 182,
+        "y": 242,
+        "size": 33
+      },
+      {
+        "id": "shape-2",
+        "type": "circle",
+        "x": 163,
+        "y": 119,
+        "size": 43
+      }
+    ],
+    "targets": [
+      {
+        "id": "target-0",
+        "type": "triangle",
+        "x": 173,
+        "y": 148,
+        "size": 43
+      },
+      {
+        "id": "target-1",
+        "type": "star",
+        "x": 319,
+        "y": 56,
+        "size": 38
+      },
+      {
+        "id": "target-2",
+        "type": "circle",
+        "x": 240,
+        "y": 143,
+        "size": 48
+      }
+    ]
+  }
+]

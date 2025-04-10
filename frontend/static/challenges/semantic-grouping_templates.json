@@ -1,0 +1,257 @@
+[
+  {
+    "type": "semantic-grouping",
+    "entropy": "0c10bf54",
+    "items": [
+      {
+        "id": "item-7",
+        "text": "tiger",
+        "category": "Animals"
+      },
+      {
+        "id": "item-6",
+        "text": "elephant",
+        "category": "Animals"
+      },
+      {
+        "id": "item-3",
+        "text": "grape",
+        "category": "Fruits"
+      },
+      {
+        "id": "item-4",
+        "text": "dog",
+        "category": "Animals"
+      },
+      {
+        "id": "item-5",
+        "text": "cat",
+        "category": "Animals"
+      },
+      {
+        "id": "item-0",
+        "text": "apple",
+        "category": "Fruits"
+      },
+      {
+        "id": "item-1",
+        "text": "banana",
+        "category": "Fruits"
+      },
+      {
+        "id": "item-2",
+        "text": "orange",
+        "category": "Fruits"
+      }
+    ],
+    "categories": [
+      "Fruits",
+      "Animals"
+    ],
+    "instruction": "Group these items into their correct categories"
+  },
+  {
+    "type": "semantic-grouping",
+    "entropy": "2b8fffee",
+    "items": [
+      {
+        "id": "item-3",
+        "text": "bicycle",
+        "category": "Vehicles"
+      },
+      {
+        "id": "item-5",
+        "text": "banana",
+        "category": "Fruits"
+      },
+      {
+        "id": "item-6",
+        "text": "orange",
+        "category": "Fruits"
+      },
+      {
+        "id": "item-1",
+        "text": "bus",
+        "category": "Vehicles"
+      },
+      {
+        "id": "item-7",
+        "text": "grape",
+        "category": "Fruits"
+      },
+      {
+        "id": "item-0",
+        "text": "car",
+        "category": "Vehicles"
+      },
+      {
+        "id": "item-2",
+        "text": "train",
+        "category": "Vehicles"
+      },
+      {
+        "id": "item-4",
+        "text": "apple",
+        "category": "Fruits"
+      }
+    ],
+    "categories": [
+      "Vehicles",
+      "Fruits"
+    ],
+    "instruction": "Group these items into their correct categories"
+  },
+  {
+    "type": "semantic-grouping",
+    "entropy": "c7932d51",
+    "items": [
+      {
+        "id": "item-6",
+        "text": "elephant",
+        "category": "Animals"
+      },
+      {
+        "id": "item-4",
+        "text": "dog",
+        "category": "Animals"
+      },
+      {
+        "id": "item-7",
+        "text": "tiger",
+        "category": "Animals"
+      },
+      {
+        "id": "item-3",
+        "text": "bicycle",
+        "category": "Vehicles"
+      },
+      {
+        "id": "item-2",
+        "text": "train",
+        "category": "Vehicles"
+      },
+      {
+        "id": "item-1",
+        "text": "bus",
+        "category": "Vehicles"
+      },
+      {
+        "id": "item-5",
+        "text": "cat",
+        "category": "Animals"
+      },
+      {
+        "id": "item-0",
+        "text": "car",
+        "category": "Vehicles"
+      }
+    ],
+    "categories": [
+      "Vehicles",
+      "Animals"
+    ],
+    "instruction": "Group these items into their correct categories"
+  },
+  {
+    "type": "semantic-grouping",
+    "entropy": "87e7433f",
+    "items": [
+      {
+        "id": "item-5",
+        "text": "bus",
+        "category": "Vehicles"
+      },
+      {
+        "id": "item-2",
+        "text": "elephant",
+        "category": "Animals"
+      },
+      {
+        "id": "item-4",
+        "text": "car",
+        "category": "Vehicles"
+      },
+      {
+        "id": "item-6",
+        "text": "train",
+        "category": "Vehicles"
+      },
+      {
+        "id": "item-0",
+        "text": "dog",
+        "category": "Animals"
+      },
+      {
+        "id": "item-1",
+        "text": "cat",
+        "category": "Animals"
+      },
+      {
+        "id": "item-7",
+        "text": "bicycle",
+        "category": "Vehicles"
+      },
+      {
+        "id": "item-3",
+        "text": "tiger",
+        "category": "Animals"
+      }
+    ],
+    "categories": [
+      "Animals",
+      "Vehicles"
+    ],
+    "instruction": "Group these items into their correct categories"
+  },
+  {
+    "type": "semantic-grouping",
+    "entropy": "0dad1470",
+    "items": [
+      {
+        "id": "item-1",
+        "text": "cat",
+        "category": "Animals"
+      },
+      {
+        "id": "item-5",
+        "text": "banana",
+        "category": "Fruits"
+      },
+      {
+        "id": "item-6",
+        "text": "orange",
+        "category": "Fruits"
+      },
+      {
+        "id": "item-4",
+        "text": "apple",
+        "category": "Fruits"
+      },
+      {
+        "id": "item-7",
+        "text": "grape",
+        "category": "Fruits"
+      },
+      {
+        "id": "item-2",
+        "text": "elephant",
+        "category": "Animals"
+      },
+      {
+        "id": "item-3",
+        "text": "tiger",
+        "category": "Animals"
+      },
+      {
+        "id": "item-0",
+        "text": "dog",
+        "category": "Animals"
+      }
+    ],
+    "categories": [
+      "Animals",
+      "Fruits"
+    ],
+    "instruction": "Group these items into their correct categories"
+  }
+]

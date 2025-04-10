@@ -1,0 +1,62 @@
+[
+  {
+    "type": "audio-captcha",
+    "entropy": "2299de64",
+    "audio_file": "/static/challenges/audio/seven.mp3",
+    "options": [
+      "seven",
+      "eleven",
+      "three",
+      "nine"
+    ],
+    "instruction": "Listen to the audio and select the word you hear"
+  },
+  {
+    "type": "audio-captcha",
+    "entropy": "79f26007",
+    "audio_file": "/static/challenges/audio/apple.mp3",
+    "options": [
+      "apple",
+      "orange",
+      "banana",
+      "grape"
+    ],
+    "instruction": "Listen to the audio and select the word you hear"
+  },
+  {
+    "type": "audio-captcha",
+    "entropy": "e16d73a6",
+    "audio_file": "/static/challenges/audio/apple.mp3",
+    "options": [
+      "apple",
+      "orange",
+      "banana",
+      "grape"
+    ],
+    "instruction": "Listen to the audio and select the word you hear"
+  },
+  {
+    "type": "audio-captcha",
+    "entropy": "4c509cec",
+    "audio_file": "/static/challenges/audio/seven.mp3",
+    "options": [
+      "seven",
+      "eleven",
+      "three",
+      "nine"
+    ],
+    "instruction": "Listen to the audio and select the word you hear"
+  },
+  {
+    "type": "audio-captcha",
+    "entropy": "ed0df60d",
+    "audio_file": "/static/challenges/audio/blue.mp3",
+    "options": [
+      "blue",
+      "red",
+      "green",
+      "yellow"
+    ],
+    "instruction": "Listen to the audio and select the word you hear"
+  }
+]

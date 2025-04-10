@@ -1,0 +1,137 @@
+[
+  {
+    "type": "pattern-completion",
+    "entropy": "7ec41cd7",
+    "pattern_type": "grid",
+    "grid": [
+      [
+        "A",
+        "B",
+        "C"
+      ],
+      [
+        "D",
+        "E",
+        "F"
+      ],
+      [
+        "G",
+        null,
+        "I"
+      ]
+    ],
+    "options": [
+      "H",
+      "J",
+      "K",
+      "L"
+    ],
+    "missing_position": [
+      2,
+      1
+    ],
+    "instruction": "What belongs in the empty cell?"
+  },
+  {
+    "type": "pattern-completion",
+    "entropy": "7a6b45f4",
+    "pattern_type": "sequence",
+    "sequence": [
+      3,
+      6,
+      12,
+      24
+    ],
+    "options": [
+      30,
+      36,
+      48,
+      54
+    ],
+    "instruction": "What number comes next in this sequence?"
+  },
+  {
+    "type": "pattern-completion",
+    "entropy": "e749918d",
+    "pattern_type": "grid",
+    "grid": [
+      [
+        "circle",
+        "square",
+        "triangle"
+      ],
+      [
+        "square",
+        "triangle",
+        "circle"
+      ],
+      [
+        "triangle",
+        null,
+        "square"
+      ]
+    ],
+    "options": [
+      "circle",
+      "square",
+      "triangle",
+      "star"
+    ],
+    "missing_position": [
+      2,
+      1
+    ],
+    "instruction": "What belongs in the empty cell?"
+  },
+  {
+    "type": "pattern-completion",
+    "entropy": "23b24e2d",
+    "pattern_type": "grid",
+    "grid": [
+      [
+        "circle",
+        "square",
+        "triangle"
+      ],
+      [
+        "square",
+        "triangle",
+        "circle"
+      ],
+      [
+        "triangle",
+        null,
+        "square"
+      ]
+    ],
+    "options": [
+      "circle",
+      "square",
+      "triangle",
+      "star"
+    ],
+    "missing_position": [
+      2,
+      1
+    ],
+    "instruction": "What belongs in the empty cell?"
+  },
+  {
+    "type": "pattern-completion",
+    "entropy": "07e5c12d",
+    "pattern_type": "sequence",
+    "sequence": [
+      3,
+      6,
+      12,
+      24
+    ],
+    "options": [
+      30,
+      36,
+      48,
+      54
+    ],
+    "instruction": "What number comes next in this sequence?"
+  }
+]

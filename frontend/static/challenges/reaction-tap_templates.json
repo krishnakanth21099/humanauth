@@ -1,0 +1,217 @@
+[
+  {
+    "type": "reaction-tap",
+    "entropy": "19086e4b",
+    "targets": [
+      {
+        "id": "target-0",
+        "x": 273,
+        "y": 229,
+        "radius": 24,
+        "appear_after_ms": 500,
+        "disappear_after_ms": 1000
+      },
+      {
+        "id": "target-1",
+        "x": 145,
+        "y": 172,
+        "radius": 37,
+        "appear_after_ms": 1505,
+        "disappear_after_ms": 1000
+      },
+      {
+        "id": "target-2",
+        "x": 320,
+        "y": 232,
+        "radius": 27,
+        "appear_after_ms": 2300,
+        "disappear_after_ms": 1000
+      },
+      {
+        "id": "target-3",
+        "x": 247,
+        "y": 230,
+        "radius": 28,
+        "appear_after_ms": 3593,
+        "disappear_after_ms": 1000
+      }
+    ],
+    "canvas": {
+      "width": 400,
+      "height": 300
+    },
+    "instruction": "Tap each circle as quickly as you can after it appears"
+  },
+  {
+    "type": "reaction-tap",
+    "entropy": "69448c40",
+    "targets": [
+      {
+        "id": "target-0",
+        "x": 343,
+        "y": 78,
+        "radius": 39,
+        "appear_after_ms": 500,
+        "disappear_after_ms": 1000
+      },
+      {
+        "id": "target-1",
+        "x": 77,
+        "y": 76,
+        "radius": 24,
+        "appear_after_ms": 1569,
+        "disappear_after_ms": 1000
+      },
+      {
+        "id": "target-2",
+        "x": 273,
+        "y": 79,
+        "radius": 29,
+        "appear_after_ms": 2672,
+        "disappear_after_ms": 1000
+      },
+      {
+        "id": "target-3",
+        "x": 207,
+        "y": 55,
+        "radius": 34,
+        "appear_after_ms": 3032,
+        "disappear_after_ms": 1000
+      },
+      {
+        "id": "target-4",
+        "x": 216,
+        "y": 181,
+        "radius": 26,
+        "appear_after_ms": 5168,
+        "disappear_after_ms": 1000
+      }
+    ],
+    "canvas": {
+      "width": 400,
+      "height": 300
+    },
+    "instruction": "Tap each circle as quickly as you can after it appears"
+  },
+  {
+    "type": "reaction-tap",
+    "entropy": "ebb14e07",
+    "targets": [
+      {
+        "id": "target-0",
+        "x": 328,
+        "y": 213,
+        "radius": 29,
+        "appear_after_ms": 500,
+        "disappear_after_ms": 1000
+      },
+      {
+        "id": "target-1",
+        "x": 85,
+        "y": 67,
+        "radius": 39,
+        "appear_after_ms": 1331,
+        "disappear_after_ms": 1000
+      },
+      {
+        "id": "target-2",
+        "x": 207,
+        "y": 62,
+        "radius": 30,
+        "appear_after_ms": 2728,
+        "disappear_after_ms": 1000
+      }
+    ],
+    "canvas": {
+      "width": 400,
+      "height": 300
+    },
+    "instruction": "Tap each circle as quickly as you can after it appears"
+  },
+  {
+    "type": "reaction-tap",
+    "entropy": "93be43d4",
+    "targets": [
+      {
+        "id": "target-0",
+        "x": 271,
+        "y": 230,
+        "radius": 29,
+        "appear_after_ms": 500,
+        "disappear_after_ms": 1000
+      },
+      {
+        "id": "target-1",
+        "x": 173,
+        "y": 110,
+        "radius": 28,
+        "appear_after_ms": 1383,
+        "disappear_after_ms": 1000
+      },
+      {
+        "id": "target-2",
+        "x": 228,
+        "y": 206,
+        "radius": 40,
+        "appear_after_ms": 2632,
+        "disappear_after_ms": 1000
+      },
+      {
+        "id": "target-3",
+        "x": 265,
+        "y": 243,
+        "radius": 21,
+        "appear_after_ms": 3896,
+        "disappear_after_ms": 1000
+      },
+      {
+        "id": "target-4",
+        "x": 108,
+        "y": 86,
+        "radius": 35,
+        "appear_after_ms": 4964,
+        "disappear_after_ms": 1000
+      }
+    ],
+    "canvas": {
+      "width": 400,
+      "height": 300
+    },
+    "instruction": "Tap each circle as quickly as you can after it appears"
+  },
+  {
+    "type": "reaction-tap",
+    "entropy": "bcded1cb",
+    "targets": [
+      {
+        "id": "target-0",
+        "x": 225,
+        "y": 86,
+        "radius": 33,
+        "appear_after_ms": 500,
+        "disappear_after_ms": 1000
+      },
+      {
+        "id": "target-1",
+        "x": 341,
+        "y": 57,
+        "radius": 34,
+        "appear_after_ms": 1329,
+        "disappear_after_ms": 1000
+      },
+      {
+        "id": "target-2",
+        "x": 139,
+        "y": 136,
+        "radius": 28,
+        "appear_after_ms": 2376,
+        "disappear_after_ms": 1000
+      }
+    ],
+    "canvas": {
+      "width": 400,
+      "height": 300
+    },
+    "instruction": "Tap each circle as quickly as you can after it appears"
+  }
+]

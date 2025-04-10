@@ -310,9 +310,18 @@ class PuzzleRenderer {
                     // Check if all targets have been tapped
                     if (activeTargets.size === 0 &&
                         Object.keys(this.responseData.taps).length === challenge.targets.length) {
+                        // Show success message
+                        const successMsg = document.createElement('div');
+                        successMsg.className = 'success-message';
+                        successMsg.textContent = 'Great job! All targets tapped.';
+                        successMsg.style.color = 'green';
+                        successMsg.style.fontWeight = 'bold';
+                        successMsg.style.marginTop = '10px';
+                        this.container.appendChild(successMsg);
+
                         setTimeout(() => {
                             this.submitResponse();
-                        }, 500);
+                        }, 1000);
                     }
 
                     break;
@@ -348,10 +357,20 @@ class PuzzleRenderer {
                     // Check if all targets have been shown
                     if (activeTargets.size === 0 &&
                         Object.keys(this.responseData.taps).length < challenge.targets.length) {
+                        // Show message about missed targets
+                        const missedCount = challenge.targets.length - Object.keys(this.responseData.taps).length;
+                        const missedMsg = document.createElement('div');
+                        missedMsg.className = 'missed-message';
+                        missedMsg.textContent = `You missed ${missedCount} target${missedCount > 1 ? 's' : ''}. That's okay!`;
+                        missedMsg.style.color = 'orange';
+                        missedMsg.style.fontWeight = 'bold';
+                        missedMsg.style.marginTop = '10px';
+                        this.container.appendChild(missedMsg);
+
                         // Auto-submit after all targets have been shown
                         setTimeout(() => {
                             this.submitResponse();
-                        }, 500);
+                        }, 1500);
                     }
                 }, target.disappear_after_ms);
             }, target.appear_after_ms);

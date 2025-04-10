@@ -226,8 +226,8 @@ class ChallengeGenerator:
                 'x': random.randint(50, canvas_width - 50),
                 'y': random.randint(50, canvas_height - 50),
                 'radius': random.randint(20, 40),
-                'appear_after_ms': 500 + i * random.randint(800, 1200),
-                'disappear_after_ms': 1000  # Time window to click
+                'appear_after_ms': 1000 + i * random.randint(1500, 2000),
+                'disappear_after_ms': 2000  # Time window to click
             }
             targets.append(target)
 

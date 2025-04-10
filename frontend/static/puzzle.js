@@ -556,24 +556,35 @@ class PuzzleRenderer {
         instruction.className = 'instruction';
         this.container.appendChild(instruction);
 
-        // Create audio element
-        const audioContainer = document.createElement('div');
-        audioContainer.className = 'audio-container';
+        // Check if the instruction contains "AUDIO SIMULATION"
+        const isSimulation = challenge.instruction.includes("AUDIO SIMULATION");
 
-        const audio = document.createElement('audio');
-        audio.controls = true;
-        audio.src = challenge.audio_file;
+        if (!isSimulation) {
+            // Create audio element for real audio files
+            const audioContainer = document.createElement('div');
+            audioContainer.className = 'audio-container';
 
-        const playButton = document.createElement('button');
-        playButton.textContent = 'Play Audio';
-        playButton.className = 'play-button';
-        playButton.addEventListener('click', () => {
-            audio.play();
-        });
+            const audio = document.createElement('audio');
+            audio.controls = true;
+            audio.src = challenge.audio_file;
 
-        audioContainer.appendChild(audio);
-        audioContainer.appendChild(playButton);
-        this.container.appendChild(audioContainer);
+            const playButton = document.createElement('button');
+            playButton.textContent = 'Play Audio';
+            playButton.className = 'play-button';
+            playButton.addEventListener('click', () => {
+                audio.play();
+            });
+
+            audioContainer.appendChild(audio);
+            audioContainer.appendChild(playButton);
+            this.container.appendChild(audioContainer);
+        } else {
+            // For simulation, we'll just show a note
+            const noteContainer = document.createElement('div');
+            noteContainer.className = 'audio-simulation-note';
+            noteContainer.innerHTML = '<strong>Note:</strong> This is a text-based simulation of an audio challenge.';
+            this.container.appendChild(noteContainer);
+        }
 
         // Create options
         const optionsContainer = document.createElement('div');
